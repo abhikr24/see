@@ -1,0 +1,1501 @@
+GURUFLOW — COMPLETE PREMIUM NATIVE MOBILE APPLICATION
+MASTER PROMPT: FULL PRODUCT UI, ALL 82 SCREENS & INTERACTIVE PROTOTYPE
+You are acting as a world-class product designer, senior React Native engineer, mobile UX architect, design systems engineer, and product prototyping specialist.
+Your task is to design and implement the complete user interface of GuruFlow, a premium, India-first institute management and learning application.
+This is not a landing page, website, static Figma-style mockup, or collection of disconnected screens.
+You must create a real, runnable, native-feeling mobile application with a complete navigation system, realistic demo data, functional interactions, and a consistent premium design system.
+The result must look and behave like a polished commercial education technology product that could eventually be released on the Google Play Store.
+1. PRODUCT UNDERSTANDING
+1.1 What is GuruFlow?
+GuruFlow is a complete digital operating system for educational institutes, coaching centres, schools, and tuition organisations.
+It connects four major groups:
+Institute Owner / Principal / Administrator
+Teacher
+Student
+Parent / Guardian
+The institute is the primary paying customer, but the product must provide meaningful daily value to all four groups.
+The product should replace fragmented workflows involving paper registers, WhatsApp groups, spreadsheets, fee registers, manual attendance, exam records, and scattered learning resources.
+GuruFlow should bring these workflows into one well-organised mobile application.
+1.2 Core product philosophy
+Design around these principles:
+Extremely easy to understand, even for non-technical Indian users.
+Premium visual appearance without unnecessary visual complexity.
+Fast access to the most important daily tasks.
+Clear information hierarchy.
+Role-specific experiences.
+Meaningful notifications and reminders.
+Strong privacy and permission boundaries.
+Consistent navigation.
+No unnecessary features that make the app confusing.
+No artificial engagement tricks or manipulative gamification.
+No fake functionality.
+The application should feel like a carefully designed premium product, not a generic admin template.
+2. TECHNICAL REQUIREMENTS
+Build a genuine native mobile application.
+2.1 Required stack
+React Native
+Latest stable Expo SDK compatible with the project
+TypeScript
+Expo Router
+React Native StyleSheet
+Lucide React Native icons or a compatible icon package
+Reusable typed components
+React hooks and context where appropriate
+Local mock/demo data for this UI prototype
+Do not build this as a normal React website.
+Do not use HTML, CSS web layouts, or desktop dashboard components.
+Do not create a website and simply place it inside a phone-shaped frame.
+The actual application must be a React Native mobile app.
+2.2 Project inspection
+Before implementation:
+Inspect the repository.
+Understand its existing structure.
+Identify the current Expo and React Native versions.
+Inspect existing dependencies.
+Preserve useful existing code.
+Avoid unnecessary rewrites.
+Create a clean implementation plan.
+Implement the product in the existing project structure.
+Do not stop after explaining the plan. Execute the work.
+2.3 Backend-ready architecture
+Although this task focuses on the complete UI and interactive prototype, structure the application so a real backend can be connected later.
+Use this architecture:
+UI Screens
+↓
+Feature / Use-case Layer
+↓
+Typed Repository Interfaces
+↓
+Provider Factory
+↓
+Demo Adapter / Supabase Adapter / Custom Backend Adapter
+Requirements:
+Screens must not directly import the Supabase SDK.
+Data access must happen through typed repositories.
+Keep demo data separate from screen components.
+Use a provider factory to select the backend.
+Create a DemoAdapter that powers the prototype.
+Prepare interfaces for a future SupabaseAdapter.
+Make it possible to implement a CustomAdapter later without rewriting screens.
+Include .env.example.
+Include a BACKEND_SETUP.md explaining future integration.
+Do not expose service-role keys, payment secrets, or other private credentials in the mobile application.
+For this task, the demo adapter must work without requiring Supabase credentials.
+3. DESIGN DIRECTION
+3.1 Visual identity
+GuruFlow should have a distinctive, modern, premium, trustworthy educational technology identity.
+Design references in terms of quality:
+Linear: clean hierarchy and refined interaction patterns.
+Notion: clarity and information organisation.
+Apple: spacing, consistency and visual refinement.
+Modern banking apps: trustworthy cards, financial clarity and polished details.
+Premium productivity apps: simple navigation and excellent usability.
+Do not directly copy another application's UI.
+Create an original GuruFlow design language.
+3.2 Colour system
+Use a restrained premium palette.
+Suggested direction:
+Primary: deep indigo / midnight blue.
+Secondary: refined violet or blue-violet.
+Accent: soft sky blue.
+Success: restrained green.
+Warning: warm amber.
+Error: muted red.
+Background: very light cool neutral.
+Cards: clean white.
+Primary text: dark charcoal / navy.
+Secondary text: balanced grey.
+Dividers: subtle neutral.
+The colours must be consistent throughout all roles.
+Do not make every card colourful.
+Do not use excessive gradients, glowing effects, random coloured backgrounds, or decorative illustrations everywhere.
+Use colour to communicate meaning.
+3.3 Typography
+Use a clean, highly readable typography system.
+Requirements:
+Clear page titles.
+Consistent heading hierarchy.
+Comfortable body text.
+Strong numerical hierarchy for dashboards.
+Readable small labels.
+Appropriate font weights.
+Consistent line heights.
+Use an appropriate font such as Inter if compatible with the project, otherwise use a suitable native font.
+3.4 Layout and spacing
+Use a consistent spacing scale.
+Consistent screen margins.
+Proper safe-area handling.
+Balanced card padding.
+Consistent corner radii.
+Clear grouping.
+Comfortable touch targets.
+Proper bottom navigation spacing.
+No overlapping content.
+No clipped text.
+No horizontal overflow.
+The design must be responsive to common Android screen sizes.
+3.5 Components
+Build a reusable component library.
+Include:
+Primary button
+Secondary button
+Icon button
+Text input
+Search input
+Password input
+Dropdown/select
+Segmented control
+Tabs
+Bottom navigation
+Top navigation/header
+Status badge
+Avatar
+Profile card
+Statistic card
+List item
+Student card
+Teacher card
+Notice card
+Homework card
+Exam card
+Fee card
+Attendance indicator
+Progress indicator
+Empty state
+Loading skeleton
+Error state
+Confirmation dialog
+Bottom sheet
+Filter panel
+Date picker
+Time picker
+File attachment item
+Notification item
+Toast/snackbar
+Offline indicator
+Every component must have consistent styling and predictable behaviour.
+4. IMPORTANT MOBILE APPLICATION RULES
+The application must behave like a genuine Android mobile app.
+Use native-feeling mobile navigation.
+Use bottom navigation where appropriate.
+Use stack navigation for deeper screens.
+Use native-feeling sheets and dialogs.
+Support Android back navigation.
+Respect safe areas.
+Make forms usable on small screens.
+Avoid desktop-style sidebars.
+Avoid desktop dashboard layouts.
+Use scrolling only where necessary.
+Keep the most important actions accessible.
+Avoid overcrowding.
+Use appropriate keyboard types.
+Ensure buttons have adequate touch areas.
+Add proper keyboard dismissal behaviour.
+Do not place a decorative smartphone frame inside the actual running app.
+If you produce screenshots or visual previews to demonstrate the app, show each complete screen inside a realistic, fully visible Android smartphone mockup. Include the complete device bezel, rounded corners, status bar and bottom navigation area. Never crop the phone or show only a partial screen.
+The phone mockup is for preview presentation only. It is not part of the application UI.
+5. FOUR USER ROLES
+GuruFlow has four major roles.
+ROLE 1 — INSTITUTE OWNER / ADMIN
+The owner manages the institute, staff, students, admissions, academics, fees, reports, and permissions.
+ROLE 2 — TEACHER
+The teacher manages assigned classes, attendance, homework, student progress, exams, doubts, and classroom activities.
+ROLE 3 — STUDENT
+The student accesses their timetable, attendance, homework, tests, learning resources, progress, and teacher communication.
+ROLE 4 — PARENT / GUARDIAN
+The parent monitors their verified child's academic progress, attendance, homework, fees, notices, and communication with teachers.
+Each role must have a separate, purpose-built experience.
+Do not show every role the same dashboard with different labels.
+6. COMPLETE SCREEN INVENTORY — 82 MAIN SCREENS
+Implement all screens below.
+Use the screen IDs to organise routes and track implementation progress.
+A. SHARED / ACCOUNT SCREENS — S01 TO S15
+S01 — Splash Screen
+Design a premium branded launch screen.
+Include:
+GuruFlow logo/wordmark.
+Short brand tagline.
+Refined background.
+Subtle launch animation if practical.
+S02 — Welcome / Onboarding Screen
+Include:
+GuruFlow introduction.
+Clear product value proposition.
+Sign in action.
+Create account action.
+Clean onboarding presentation.
+S03 — Sign In Screen
+Include:
+Phone number or email input.
+Password input if applicable.
+Show/hide password.
+Sign in button.
+Forgot password.
+Create account link.
+Validation and loading states.
+S04 — Create Account Screen
+Include:
+Full name.
+Mobile number.
+Email if required.
+Password.
+Confirm password.
+Terms and privacy acceptance.
+Account creation interaction.
+S05 — OTP Verification Screen
+Include:
+Mobile/email destination display.
+OTP input.
+Resend timer.
+Verify action.
+Invalid OTP state.
+Success state.
+For demo mode, use clearly documented demo verification behaviour. Do not claim that an actual SMS was sent.
+S06 — Forgot Password / Reset Password
+Include:
+Account identifier.
+Recovery flow.
+OTP or recovery-code demo state.
+New password.
+Confirm password.
+Validation and success feedback.
+S07 — Profile Setup Screen
+Include:
+Profile image.
+Full name.
+Phone number.
+Email.
+Basic profile details.
+Save action.
+S08 — Institute Selection Screen
+A user may belong to more than one institute.
+Include:
+Institute cards.
+Institute logo.
+Institute name.
+Role in that institute.
+Status.
+Select institute action.
+Join institute action.
+Create institute action if authorised.
+S09 — Create Institute Screen
+Include:
+Institute name.
+Institute type.
+Address.
+City.
+State.
+Contact number.
+Optional logo.
+Academic year.
+Create action.
+Use Indian location conventions.
+S10 — Join Institute Screen
+Include:
+Invite code.
+Institute code.
+Search/join flow if supported.
+Request access.
+Pending approval state.
+Error state.
+S11 — Notifications Inbox
+Include:
+All notifications.
+Unread notifications.
+Category filters.
+Read/unread status.
+Notification timestamps.
+Deep links to relevant screens.
+Mark all as read.
+S12 — Global Search
+Include:
+Search input.
+Recent searches.
+Search results.
+Role-aware results.
+Relevant categories.
+Empty state.
+Clear search.
+S13 — User Profile Screen
+Include:
+Profile image.
+Name.
+Contact details.
+Active institute.
+Current role.
+Edit profile.
+Account options.
+S14 — Preferences / Help / Privacy
+Include:
+Notification preferences.
+Language preferences.
+Theme preference if implemented.
+Help centre.
+Support contact.
+Privacy information.
+Terms.
+Data export.
+Account closure request.
+S15 — Global Application States
+Create reusable UI states for:
+Loading.
+Skeleton loading.
+Empty data.
+Network error.
+Offline mode.
+Retry.
+Permission denied.
+Session expired.
+Maintenance/unavailable state.
+Unsaved changes.
+These are reusable application states, not separate role dashboards.
+B. OWNER / ADMIN SCREENS — S16 TO S41
+Build a complete institute-management experience.
+S16 — Owner Dashboard
+The dashboard should immediately communicate the institute's operational health.
+Include:
+Welcome header.
+Institute name.
+Date selector.
+Active students.
+Total staff.
+New enquiries.
+Today's attendance.
+Fee collection.
+Pending dues.
+Upcoming exams.
+Important alerts.
+Recent activities.
+Quick actions.
+Charts should be readable and meaningful.
+Every statistic should be tappable and open a relevant detail screen.
+S17 — Admissions Overview
+Include:
+Total enquiries.
+New enquiries.
+Follow-ups due.
+Demo classes scheduled.
+Converted admissions.
+Lost enquiries.
+Pipeline summary.
+Conversion overview.
+S18 — Enquiry Pipeline
+Include statuses:
+New
+Contacted
+Demo Scheduled
+Follow-up
+Converted
+Lost
+Include:
+Search.
+Filters.
+Sorting.
+Pipeline/list view.
+Enquiry cards.
+Status updates.
+S19 — Add / Edit Enquiry
+Include:
+Student name.
+Guardian name.
+Phone number.
+Interested course/batch.
+Source.
+Notes.
+Follow-up date.
+Demo class date.
+Status.
+Save action.
+S20 — Enquiry Details
+Include:
+Student information.
+Guardian information.
+Interested course.
+Current status.
+Activity timeline.
+Notes.
+Follow-up history.
+Demo schedule.
+Edit action.
+Convert to student action.
+Mark lost action.
+S21 — Student Directory
+Include:
+Student search.
+Student list.
+Profile image/initials.
+Student name.
+Student ID.
+Batch.
+Status.
+Filters.
+Sort.
+Add student.
+Bulk selection if practical.
+S22 — Add / Edit Student
+Include:
+Student name.
+Student ID.
+Date of birth.
+Gender only where genuinely required.
+Phone number if applicable.
+Guardian details.
+Address if needed.
+Academic session.
+Batch.
+Subjects.
+Admission date.
+Status.
+Save action.
+S23 — Student 360 Profile
+Create a detailed student overview.
+Sections/tabs:
+Overview.
+Attendance.
+Homework.
+Exams/results.
+Practice.
+Teacher feedback.
+Fee information, subject to permission.
+Activity timeline.
+Include meaningful summaries and drill-down navigation.
+S24 — Guardian Linking / Verification
+Include:
+Student selection.
+Guardian details.
+Relationship.
+Mobile number.
+Invitation status.
+Verification status.
+Consent status.
+Send/resend invitation demo interaction.
+Linked guardian list.
+Never allow an unverified guardian to see a child's private records.
+S25 — Staff Directory
+Include:
+Staff search.
+Teacher list.
+Staff roles.
+Assigned subjects.
+Assigned batches.
+Employment status.
+Add staff action.
+Filters.
+S26 — Staff Profile
+Include:
+Staff information.
+Contact details.
+Assigned batches.
+Assigned subjects.
+Timetable.
+Workload.
+Attendance.
+Leave history.
+Substitution details.
+Edit action.
+S27 — Academic Sessions
+Include:
+Current academic session.
+Past sessions.
+Create session.
+Session dates.
+Start/end dates.
+Active/inactive state.
+Session switching.
+S28 — Batches / Classes Management
+Include:
+Batch list.
+Batch name.
+Course.
+Academic session.
+Student count.
+Assigned teachers.
+Subjects.
+Status.
+Create/edit batch.
+S29 — Batch Details / Roster
+Include:
+Batch information.
+Student roster.
+Assigned teachers.
+Subjects.
+Timetable summary.
+Attendance summary.
+Batch resources.
+Edit batch.
+Assign student/teacher.
+S30 — Subjects / Classrooms
+Include:
+Subject list.
+Subject details.
+Classroom list.
+Room capacity.
+Room availability.
+Create/edit subject.
+Create/edit classroom.
+S31 — Timetable Management
+Include:
+Day view.
+Week view.
+Batch selector.
+Teacher selector.
+Subject selector.
+Classroom selector.
+Class time.
+Add/edit class.
+Conflict detection.
+Clear conflict messages.
+Do not silently allow overlapping assignments.
+S32 — Attendance Reports
+Include:
+Daily attendance.
+Date range.
+Batch filter.
+Student filter.
+Present.
+Absent.
+Late.
+Attendance percentages.
+Trends.
+Correction history.
+Export preview.
+S33 — Exam Management
+Include:
+Exam list.
+Upcoming exams.
+Completed exams.
+Draft exams.
+Create exam.
+Exam schedule.
+Batch.
+Subject.
+Maximum marks.
+Exam date.
+Publication status.
+S34 — Exam Details / Marks Overview
+Include:
+Exam information.
+Subject-wise marks.
+Student results.
+Missing marks.
+Draft/published state.
+Performance overview.
+Edit exam.
+Publish results with confirmation.
+S35 — Fees Dashboard
+Include:
+Total expected fees.
+Collected fees.
+Outstanding fees.
+Overdue amount.
+Recent payments.
+Upcoming dues.
+Collection trends.
+Fee-related alerts.
+S36 — Fee Structures / Assignments
+Include:
+Fee structure list.
+Course/batch association.
+Total fee.
+Installment configuration.
+Due dates.
+Discounts/scholarships where permitted.
+Assign fee structure to students.
+Edit structure.
+S37 — Payments / Ledger / Receipts
+Include:
+Payment history.
+Student search.
+Payment status.
+Payment method.
+Transaction reference.
+Receipt preview.
+Refund/reconciliation workflow.
+Outstanding balance.
+Date filters.
+Important:
+Demo payments must be clearly labelled DEMO.
+Never show a fake successful real-world transaction.
+Do not simulate an actual UPI/bank transfer.
+Real payment integration will be added later through a trusted server-side payment provider.
+S38 — Study Resources Management
+Include:
+Folder list.
+PDFs.
+Documents.
+Images.
+External links.
+Resource title.
+Subject.
+Batch sharing.
+Upload progress demo.
+File preview.
+Edit/delete with confirmation.
+Do not implement video hosting or streaming in this initial product.
+S39 — Notices / Communication Management
+Include:
+Notice list.
+Create notice.
+Audience selection.
+All students.
+Selected batches.
+Teachers.
+Parents.
+Attachments.
+Publish now.
+Schedule.
+Expiry date.
+Read status.
+Edit/archive.
+S40 — Insights / Reports
+Include:
+Admission conversion.
+Fee collection.
+Outstanding dues.
+Attendance patterns.
+Batch performance.
+Exam performance.
+Staff workload.
+Date filters.
+Explainable indicators.
+Avoid presenting uncertain predictions as facts. Do not use stigmatizing labels for students.
+S41 — Institute Settings / Members / Permissions
+Include:
+Institute profile.
+Institute logo.
+Contact details.
+Academic configuration.
+Member management.
+Role assignments.
+Permission configuration.
+Plan/subscription information.
+Integration settings placeholder.
+Audit activity.
+Data export.
+Support.
+Do not imply that a placeholder integration is already connected.
+C. TEACHER SCREENS — S42 TO S55
+The teacher experience should be focused on daily classroom work.
+S42 — Teacher Home / My Work
+Include:
+Greeting.
+Today's date.
+Next class.
+Today's timetable.
+Assigned batches.
+Pending attendance.
+Homework reviews.
+Pending marks.
+New doubts.
+Notices.
+Quick actions.
+Prioritise the next action a teacher needs to complete.
+S43 — Teacher Timetable
+Include:
+Today.
+Week.
+Class timings.
+Batch.
+Subject.
+Classroom.
+Class status.
+Tap a class to open details.
+S44 — My Classes / Assigned Batches
+Include:
+Assigned batches.
+Subject.
+Student count.
+Next class.
+Batch status.
+Search/filter.
+Batch details navigation.
+S45 — Class Detail / Class Diary
+Include:
+Batch information.
+Subject.
+Class schedule.
+Student roster.
+Previous class notes.
+Today's lesson topic.
+Class diary.
+Resources.
+Homework shortcut.
+S46 — Attendance Marking
+Include:
+Batch.
+Date.
+Student roster.
+Present.
+Absent.
+Late.
+Select all present.
+Individual status changes.
+Attendance count.
+Save confirmation.
+Correction flow.
+Make attendance marking fast and easy.
+S47 — Homework List / Review Queue
+Include:
+Assigned homework.
+Pending reviews.
+Completed reviews.
+Overdue submissions.
+Batch filters.
+Subject filters.
+Due-date filters.
+Student submission counts.
+S48 — Create / Edit Homework
+Include:
+Homework title.
+Subject.
+Batch.
+Instructions.
+Attachment.
+Due date.
+Maximum marks if applicable.
+Publish/save draft.
+Validation.
+S49 — Homework Submission / Review Detail
+Include:
+Student information.
+Homework information.
+Submission status.
+Submitted file.
+Submitted timestamp.
+Teacher feedback.
+Marks if applicable.
+Accept/review workflow.
+Return for correction.
+Save feedback.
+S50 — Exam / Marks Entry
+Include:
+Exam selector.
+Batch selector.
+Subject.
+Student list.
+Marks input.
+Maximum marks validation.
+Missing marks indicator.
+Save draft.
+Submit for publication if authorised.
+S51 — Assigned Students / Student Detail
+Include:
+Assigned student list.
+Search.
+Batch filters.
+Student profile.
+Attendance summary.
+Homework summary.
+Exam performance.
+Teacher feedback.
+Teachers must not access students outside their authorised assignments.
+S52 — Teacher Resources
+Include:
+Assigned resources.
+Subject filters.
+Batch filters.
+PDF/document/image/link resources.
+Search.
+Resource preview.
+Bookmark if appropriate.
+S53 — Doubt Inbox / Doubt Detail
+Include:
+Student doubts.
+Subject.
+Batch.
+Message.
+Attachments.
+Status.
+Reply.
+Mark resolved.
+Conversation history.
+S54 — Leave Request / Calendar
+Include:
+Leave balance if configured.
+Request leave.
+Start date.
+End date.
+Reason.
+Existing requests.
+Pending/approved/rejected states.
+Calendar view.
+Substitution information where available.
+S55 — Teacher Notices / Notifications / Profile
+Provide a well-organised teacher area for:
+Institute notices.
+Personal notifications.
+Notification history.
+Profile.
+Preferences.
+Help.
+Sign out.
+D. STUDENT SCREENS — S56 TO S71
+The student experience should be motivating, simple, useful, and focused on learning.
+S56 — Student Home / My Day
+Include:
+Welcome.
+Today's timetable.
+Upcoming classes.
+Homework due.
+Upcoming tests.
+New resources.
+Notices.
+Attendance snapshot.
+Progress snapshot.
+S57 — Timetable / Class Detail
+Include:
+Daily timetable.
+Weekly timetable.
+Subject.
+Teacher.
+Time.
+Classroom.
+Class details.
+Related resources.
+S58 — My Attendance
+Include:
+Attendance percentage.
+Monthly calendar.
+Present days.
+Absent days.
+Late days.
+Attendance history.
+Relevant institute notices.
+S59 — Homework List
+Include:
+All homework.
+Due soon.
+Submitted.
+Pending.
+Overdue.
+Completed.
+Subject filters.
+Due-date sorting.
+S60 — Homework Detail / Submission
+Include:
+Title.
+Instructions.
+Subject.
+Teacher.
+Due date.
+Attachments.
+Submission status.
+Upload/select file demo.
+Text response if supported.
+Submit confirmation.
+Do not claim that a real cloud upload occurred in demo mode.
+S61 — Homework Feedback
+Include:
+Teacher feedback.
+Marks if applicable.
+Submission history.
+Correction requests.
+Resubmission action.
+S62 — Exams / Exam Schedule
+Include:
+Upcoming exams.
+Past exams.
+Exam dates.
+Subjects.
+Syllabus/resources where available.
+Exam instructions.
+S63 — My Results
+Include:
+Exam results.
+Subject-wise marks.
+Total marks.
+Percentage.
+Grade where configured.
+Previous results.
+Clear performance summary.
+Do not expose other students' private results.
+S64 — Study Planner
+Include:
+Personal tasks.
+Study goals.
+Revision plans.
+Upcoming deadlines.
+Reminders.
+Task completion.
+Calendar/list view.
+Simple progress tracking.
+S65 — Practice Zone
+Create a fully interactive practice experience using locally stored demo questions.
+Include:
+Subject selection.
+Chapter selection.
+Topic selection.
+MCQ questions.
+Multiple-choice answers.
+Next/previous navigation.
+Submit answers.
+Score.
+Explanations.
+Mistake review.
+Retry practice.
+No runtime AI is required.
+S66 — Quiz Attempt / Results / Mistake Review
+Include:
+Active question.
+Answer selection.
+Progress indicator.
+Submit confirmation.
+Score screen.
+Correct/incorrect answers.
+Explanations.
+Retry incorrect questions.
+S67 — My Progress
+Include:
+Subject-wise progress.
+Attendance trends.
+Test performance.
+Progress over time.
+Strengths.
+Areas to practise.
+Clear, supportive explanations.
+Do not use public rankings or shame-based comparison.
+S68 — Learning Library
+Include:
+Study resources.
+Subject filters.
+Chapter filters.
+Search.
+PDFs.
+Documents.
+Images.
+External links.
+Bookmarks.
+Recently opened.
+Permitted offline-download state if implemented.
+No video hosting or streaming.
+S69 — Resource Detail / Reader
+Include:
+Resource title.
+Subject.
+Teacher/source.
+File information.
+PDF/document preview where supported.
+Image preview.
+External-link handling.
+Bookmark.
+Download state where supported.
+S70 — Ask Your Teacher / Doubt Detail
+Include:
+Subject selection.
+Teacher selection where appropriate.
+Question text.
+Image attachment.
+Submit doubt.
+Conversation history.
+Teacher reply.
+Status.
+S71 — Achievements / Milestones / Student Profile
+Include:
+Learning milestones.
+Completed goals.
+Practice milestones.
+Attendance milestones where appropriate.
+Student profile.
+Preferences.
+Account information.
+Achievements must be supportive, not manipulative.
+E. PARENT / GUARDIAN SCREENS — S72 TO S82
+The parent experience must be especially simple and understandable.
+Use clear language rather than technical educational-management terminology.
+S72 — Parent Home / Child Overview
+Include:
+Welcome.
+Verified child selector.
+Multiple children support.
+Attendance snapshot.
+Latest results.
+Homework status.
+Upcoming tests.
+Important notices.
+Fee reminder.
+Weekly summary.
+Only show children linked and verified to the parent account.
+S73 — Child Attendance
+Include:
+Attendance percentage.
+Calendar.
+Present days.
+Absent days.
+Late days.
+Absence history.
+Relevant notifications.
+S74 — Child Results / Academic Progress
+Include:
+Recent exam results.
+Subject-wise performance.
+Progress over time.
+Teacher feedback where permitted.
+Areas needing attention.
+Clear explanations.
+S75 — Child Homework
+Include:
+Assigned homework.
+Due dates.
+Completion status.
+Overdue homework.
+Teacher feedback.
+Submission details where permitted.
+S76 — Weekly Progress Digest
+Include:
+Attendance summary.
+Homework completion.
+Recent tests.
+New learning materials.
+Teacher feedback.
+Upcoming events.
+Important actions for parents.
+Keep this screen readable for busy parents.
+S77 — Fees / Dues / Installments
+Include:
+Fee structure.
+Total fee.
+Paid amount.
+Outstanding balance.
+Installment schedule.
+Due dates.
+Overdue items.
+Applicable discounts.
+S78 — Payment History / Receipt
+Include:
+Previous payments.
+Payment date.
+Amount.
+Method.
+Transaction reference.
+Receipt preview.
+Payment status.
+Clearly distinguish demo records from actual payments.
+S79 — Institute Notices
+Include:
+Important announcements.
+Academic notices.
+Holiday notices.
+Exam notices.
+Fee notices.
+Attachments.
+Read/unread status.
+S80 — Leave Request
+Include:
+Select child.
+Start date.
+End date.
+Reason.
+Submit request.
+Request history.
+Pending/approved/rejected status.
+S81 — Teacher Contact / Meeting Request
+Include:
+Relevant teacher information.
+Contact permissions.
+Meeting request.
+Preferred date/time.
+Reason.
+Request status.
+Conversation/history if supported.
+Do not expose private teacher contact information unless authorised by institute policy.
+S82 — Parent Notifications / Preferences / Profile
+Include:
+Notifications.
+Attendance alerts.
+Homework notifications.
+Exam/result notifications.
+Fee reminders.
+Notice preferences.
+Profile.
+Help.
+Sign out.
+7. SHARED INTERACTIVE COMPONENTS AND FLOWS
+The following components must be implemented and reused across screens. They are not counted as additional main screens.
+7.1 Navigation
+Create separate role-aware navigation.
+Owner:
+Home
+Admissions
+Students
+Academics
+More
+Teacher:
+Home
+Classes
+Attendance
+Homework
+More
+Student:
+Home
+Timetable
+Homework
+Practice
+More
+Parent:
+Home
+Academics
+Fees
+Notices
+More
+Use a sensible number of bottom tabs. Keep secondary destinations inside organised menus or nested navigation.
+Do not place every feature in the bottom bar.
+7.2 Context switching
+Implement:
+Institute switcher.
+Role switcher when the account has multiple roles.
+Child selector for parents.
+Batch selector.
+Subject selector.
+Academic session selector.
+Changing context must update the relevant visible data.
+7.3 Filters and search
+Provide reusable:
+Search.
+Date filters.
+Batch filters.
+Subject filters.
+Status filters.
+Sort controls.
+Clear filters.
+Applied filter indicators.
+7.4 Forms
+All forms must have:
+Labels.
+Validation.
+Required field indicators.
+Helpful error messages.
+Disabled state when invalid.
+Loading state on submit.
+Success feedback.
+Cancel/back behaviour.
+Unsaved changes warning where appropriate.
+7.5 Confirmation flows
+Use confirmations for:
+Deleting a record.
+Publishing exam results.
+Changing attendance records.
+Submitting homework.
+Publishing notices.
+Issuing fee adjustments.
+Refund requests.
+Removing members.
+Closing an account.
+Never use a destructive action without appropriate confirmation.
+7.6 File handling
+For this prototype:
+Use a local file-picker interaction where supported.
+Show selected file name.
+Show file type and size.
+Show simulated upload progress only if clearly labelled as demo.
+Provide remove/retry.
+Provide preview for supported file types.
+Do not claim real cloud storage upload.
+7.7 Notifications
+Notification items must be interactive.
+Tapping a notification should open the correct destination screen.
+Mark-as-read must update the visible state.
+8. DEMO DATA AND CROSS-ROLE CONSISTENCY
+Do not create disconnected dummy screens.
+Create a realistic, internally consistent demo institute.
+Suggested demo institute:
+Aarohan Learning Institute
+Use realistic Indian names and records.
+Create connected sample data for:
+One institute.
+Multiple academic sessions if useful.
+Multiple batches.
+Multiple subjects.
+Multiple teachers.
+Multiple students.
+Verified parent/guardian links.
+Attendance records.
+Homework assignments.
+Homework submissions.
+Exams.
+Exam results.
+Fee structures.
+Fee records.
+Notices.
+Study resources.
+Doubts.
+Timetable entries.
+Use Indian formatting:
+Currency: ₹
+Date: DD/MM/YYYY
+Time: 12-hour format with AM/PM where suitable.
+Phone numbers: Indian +91 format.
+State/city examples from India.
+Use a realistic mix of names, not repeated placeholder names.
+8.1 Cross-role data updates
+This is critical.
+The same demo data must be shared across roles.
+Examples:
+When a teacher marks a student absent, the owner attendance report should reflect the change, and the verified parent view should reflect the same record.
+When an owner creates a homework assignment, the assigned teacher/student views should show the relevant item.
+When a student submits homework, the teacher review queue should update.
+When a teacher publishes marks, the student results screen should update, and the verified parent results screen should update.
+When an owner publishes a notice to a batch, the relevant teacher/student/parent views should show it according to the selected audience.
+When a demo fee record is updated, the owner ledger and parent fee view should remain consistent.
+When a parent submits a leave request, the appropriate owner/teacher-facing state should reflect the request.
+Do not implement separate unrelated sample data for every screen.
+Use a shared demo data store and update it through repository/use-case functions.
+9. ROLE-BASED ACCESS AND PRIVACY
+Create a clear permission matrix.
+Examples:
+Owner/admin:
+Can access institute records according to assigned permissions.
+Teacher:
+Can access assigned classes, assigned students and permitted academic workflows.
+Cannot access unrelated institute financial or private records unless explicitly authorised.
+Student:
+Can access their own records.
+Cannot access another student's private information.
+Parent:
+Can access only verified linked children.
+Cannot switch to or view unlinked students.
+If an action is not permitted:
+Hide it where appropriate.
+Otherwise show a clear permission-denied state.
+Important: client-side role checks are only UI behaviour in this prototype. Real production security must be enforced by the backend and database policies.
+Do not present client-side checks as production security.
+Protect children's personal information.
+Provide accessible data export and account-closure request flows.
+Do not use student data for behavioural advertising.
+10. INTERACTION REQUIREMENTS — NO DEAD BUTTONS
+Every visible interactive element must do something meaningful.
+Examples:
+Buttons must navigate, submit, save, update, open a sheet, or show an appropriate state.
+Tabs must switch content.
+Filters must filter records.
+Search must search demo records.
+Dropdowns must select values.
+Forms must validate and submit.
+Cards must open relevant details.
+Back buttons must work.
+Bottom navigation must work.
+Notification items must open relevant destinations.
+Attendance toggles must update attendance.
+Homework submission must update submission status.
+Practice questions must accept answers and calculate scores.
+Parent child selector must change the displayed child.
+Institute selector must change institute context if multiple demo institutes are provided.
+Role selector must switch to the relevant role experience when the demo account supports it.
+Do not use buttons that only show an alert saying "Coming soon" unless the feature is intentionally marked as unavailable and that state is clearly explained.
+For features not connected to real services, implement a clearly labelled demo interaction.
+Do not claim a real-world action happened when it did not.
+11. DEMO MODE AND REAL INTEGRATION BOUNDARY
+This is an interactive UI prototype, not a live production service.
+Clearly separate demo functionality from future production integrations.
+Demo mode may support:
+Local sign-in simulation.
+Role switching.
+Shared mock data.
+Form submission.
+Attendance updates.
+Homework updates.
+Quiz scoring.
+Demo notice publication.
+Demo receipt previews.
+Simulated upload states.
+Local notification state.
+Do not fake:
+Real SMS/OTP delivery.
+Real email delivery.
+Real push notification delivery.
+Real UPI/bank payments.
+Real payment success.
+Real cloud uploads.
+Real data export from a production database.
+Real account deletion.
+Clearly label relevant demo actions and records.
+12. DESIGN QUALITY REQUIREMENTS
+The design must not look like an unfinished starter template.
+Avoid:
+Generic dashboard clones.
+Excessively large cards.
+Random colours.
+Inconsistent icons.
+Too many gradients.
+Excessive borders.
+Tiny text.
+Poor spacing.
+Crowded forms.
+Unnecessary decorative elements.
+Fake charts.
+Repeated identical cards.
+Empty screens with no explanation.
+Buttons without actions.
+Placeholder text such as "Lorem ipsum".
+Web-style navigation.
+Use:
+Thoughtful information hierarchy.
+Carefully designed empty states.
+Clear labels.
+Appropriate iconography.
+Realistic content.
+Beautiful but restrained data visualisation.
+Consistent components.
+Smooth, subtle transitions.
+Polished form interactions.
+Professional visual rhythm.
+Each role should have a distinct information architecture while retaining one shared brand identity.
+13. ACCESSIBILITY AND USABILITY
+Implement sensible accessibility:
+Readable contrast.
+Meaningful accessibility labels.
+Proper touch target sizes.
+Clear validation messages.
+No information conveyed only by colour.
+Support for Android system font scaling where practical.
+Clear error recovery.
+Predictable navigation.
+Simple parent-facing language.
+Consistent date and currency formats.
+14. PERFORMANCE AND CODE QUALITY
+Requirements:
+Avoid unnecessary dependencies.
+Avoid unnecessary rerenders.
+Use reusable components.
+Use TypeScript types for models and repositories.
+Keep screens modular.
+Avoid giant monolithic components.
+Keep demo data separate.
+Keep navigation definitions organised.
+Handle missing or empty data safely.
+Avoid hardcoded navigation hacks.
+Avoid TypeScript errors.
+Avoid runtime crashes.
+Avoid broken imports.
+Keep the project runnable.
+If using an additional package, check compatibility with the existing Expo SDK before installing.
+Do not install packages blindly.
+15. TESTING AND ACCEPTANCE CRITERIA
+The project is not complete merely because screens have been created.
+Verify the following:
+Application
+App launches successfully.
+Splash and welcome flows work.
+Authentication demo flow works.
+Role selection works.
+Institute selection works.
+Navigation works.
+Android back behaviour works.
+All 82 screens
+All screen IDs S01–S82 are accounted for.
+All required destinations exist.
+Screens are accessible through navigation or a documented demo route.
+No screen is accidentally omitted.
+No duplicate placeholder screen is used to claim completion.
+Interactions
+Buttons work.
+Tabs work.
+Search works.
+Filters work.
+Forms validate.
+Save actions update data.
+Confirmation dialogs work.
+Notifications navigate correctly.
+Attendance updates correctly.
+Homework updates correctly.
+Quiz scoring works.
+Parent child selection works.
+Data consistency
+Shared demo data is used.
+Changes are reflected across relevant roles.
+Permissions are respected in the UI.
+UI
+No clipped text.
+No overlapping elements.
+No broken layouts.
+No inaccessible buttons.
+No horizontal overflow.
+No inconsistent navigation.
+No unhandled empty states.
+Technical
+Run TypeScript checks.
+Run the available lint checks.
+Run Expo's available project validation.
+Fix errors discovered.
+Confirm that the app can start.
+Do not claim a test passed unless you actually ran it.
+16. REQUIRED DELIVERABLES
+At the end of the implementation, provide:
+Complete React Native application.
+All 82 main screens.
+Shared design system.
+Reusable component library.
+Role-aware navigation.
+Working demo data layer.
+Cross-role data consistency.
+Permission-aware UI.
+Backend repository interfaces.
+Demo adapter.
+Supabase adapter integration boundary.
+.env.example.
+BACKEND_SETUP.md.
+Permission matrix documentation.
+Complete screen inventory with implementation status.
+Testing report.
+Exact commands to run the application.
+Any known limitations.
+Create a clear file/folder structure. Do not leave unnecessary duplicate files.
+17. IMPLEMENTATION STRATEGY
+Do not try to create 82 unrelated screens in one giant component.
+Implement the project in logical stages while preserving the full product scope.
+Recommended stages:
+Stage 1 — Foundation
+Inspect repository.
+Configure Expo/TypeScript.
+Set up routing.
+Set up theme.
+Set up reusable components.
+Set up demo data architecture.
+Stage 2 — Shared Screens
+Implement S01–S15.
+Test authentication and institute-selection flows.
+Stage 3 — Owner Experience
+Implement S16–S41.
+Test institute management and cross-screen navigation.
+Stage 4 — Teacher Experience
+Implement S42–S55.
+Test attendance, homework and marks workflows.
+Stage 5 — Student Experience
+Implement S56–S71.
+Test planner, practice, homework and results workflows.
+Stage 6 — Parent Experience
+Implement S72–S82.
+Test linked-child permissions and parent workflows.
+Stage 7 — Integration and Polish
+Cross-role data updates.
+Empty/loading/error states.
+Permission states.
+Responsive layout checks.
+Performance and visual refinement.
+Stage 8 — Final Verification
+Run the application.
+Run checks.
+Fix errors.
+Verify all 82 screen IDs.
+Produce implementation report.
+You may adjust the order if repository constraints require it, but do not silently drop any screen or workflow.
+18. FINAL INSTRUCTIONS
+Read the entire prompt before beginning.
+Think like a product team building a serious commercial application, not someone generating a quick UI demo.
+Prioritise a coherent product over isolated attractive screens.
+The four roles must feel like parts of one connected platform.
+The owner should be able to manage the institute.
+The teacher should be able to complete classroom work quickly.
+The student should be able to manage learning and track progress.
+The parent should be able to understand their child's academic situation without confusion.
+The application should be premium, mobile-first, realistic, interactive, and technically structured for future backend integration.
+Do not stop at a plan. Build the application.
+At the end, report:
+Number of screens implemented out of 82.
+Screen IDs completed.
+Screens or workflows not completed.
+Interactions tested.
+Commands used for validation.
+Known issues.
+How to run the app.
+Never report 82/82 unless all 82 screen destinations actually exist and have been verified.
+BEGIN BY INSPECTING THE REPOSITORY, THEN IMPLEMENT THE COMPLETE GURUFLOW APPLICATION.
